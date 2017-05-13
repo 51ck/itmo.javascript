@@ -6,7 +6,8 @@
     border-bottom: 1px solid black;
 }
 
-[class^="task"] > button {
+[class^="task"] > button,
+[class^="task"] > input[type="text"] {
     line-height: inherit;
     box-sizing: border-box;
     font-size: inherit;
