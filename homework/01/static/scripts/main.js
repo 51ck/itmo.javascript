@@ -42,7 +42,7 @@
             num = Math.abs(num);
 
             switch ( true ) {
-                case (num === 0):
+                case ( num === 0 ):
                     result += 'нулевое';
                     break;
                 case ( num < 10 ):
