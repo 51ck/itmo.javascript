@@ -50,43 +50,43 @@
         var number = parseInt(key);
 
         switch ( number ) {
-            case (0):
+            case 0:
                 return 'нуль';
                 break;
 
-            case (1):
+            case 1:
                 return 'единица';
                 break;
 
-            case (2):
+            case 2:
                 return 'двойка';
                 break;
 
-            case (3):
+            case 3:
                 return 'тройка';
                 break;
 
-            case (4):
+            case 4:
                 return 'четвёрка';
                 break;
 
-            case (5):
+            case 5:
                 return 'пятёрка';
                 break;
 
-            case (6):
+            case 6:
                 return 'шестёрка';
                 break;
 
-            case (7):
+            case 7:
                 return 'семёрка';
                 break;
 
-            case (8):
+            case 8:
                 return 'восьмёрка';
                 break;
 
-            case (9):
+            case 9:
                 return 'девятка';
                 break;
 
@@ -111,27 +111,27 @@
         var number = parseInt(key);
 
         switch ( number ) {
-            case (0):
+            case 0:
                 return 'н/а';
                 break;
 
-            case (1):
+            case 1:
                 return 'плохо';
                 break;
 
-            case (2):
+            case 2:
                 return 'неудовлетворительно';
                 break;
 
-            case (3):
+            case 3:
                 return 'удовлетворительно';
                 break;
 
-            case (4):
+            case 4:
                 return 'хорошо';
                 break;
 
-            case (5):
+            case 5:
                 return 'отлично';
                 break;
 
