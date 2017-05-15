@@ -148,9 +148,10 @@
         // table += '<table><thead>' '</thead><tbody>' '</tbody></table>';
 
         var i = 0
+            , n = 18
             ;
 
-        while ( i < 10 ) {
+        while ( i < n ) {
             var td = ['<td style="width: 2em; padding: .25em;">', '</td>'],
                 th = ['<th style="width: 2em; border-right: 1px solid gray; padding: .25em;">', '</th>'];
 
@@ -161,7 +162,7 @@
 
             table += '<tr>';
             var j = 0;
-            while ( j < 10 ) {
+            while ( j < n ) {
                 if ( i === 0 && j === 0 ) {
                     table += '<th style="width: 2em; border-right: 1px solid gray; border-bottom: 1px solid gray; padding: .25em;">\</th>'
                 } else if ( j === 0) {
@@ -181,7 +182,7 @@
 
             i++;
 
-            if ( i === 10 ) {
+            if ( i === n ) {
                 table += '</tbody></table>';
             };
 
