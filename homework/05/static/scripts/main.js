@@ -27,13 +27,18 @@
         // (например, первых 8 чисел Фибоначчи:  0, 1, 1, 2, 3, 5, 8, 13, 21).
         // Заданное число передается функции в качестве аргумента.
         // Про числа Фибоначчи: https://ru.wikipedia.org/wiki/Числа_Фибоначчи
-        var a = 0,
-            b = 1;
-
-        while ( n-- > 0 ) {
-            [a, b] = [b, a + b];
+        var a = 1,
+            result = [0];
+        if ( n > 1 && n < 3 ) {
+            result = [0, 1];
+        } else if ( n > 2 ) {
+            result = [0, 1];
+            while ( a++ < n - 1) {
+                result[a] = result[a - 2] + result[a - 1];
+            };
         };
-        return a;
+        return result;
+
     };
 
     var task4 = (n) => {
@@ -85,18 +90,11 @@
         task2Arr.addEventListener('keyup', task2Handler);
         task2Brr.addEventListener('keyup', task2Handler);
 
-    //     var game = new X0 ({
-    //         fieldSelector: '.task2 .table-wrapper table',
-    //         scoreSelector: '.task2 span',
-    //         resetButtonSelector: '.task2 button'
-    //     });
-
-
         var task3Input = document.querySelector('.task3 input[type="text"]');
 
         task3Input.addEventListener('keyup', function(){
             var n = app.tools.stringToIntArray(this.value)[0];
-            spans[2].innerHTML = n ? task3(n) : '0';
+            spans[2].innerHTML = n ? task3(n).join(', ') : '0';
         });
 
         var task4Input = document.querySelector('.task4 input[type="text"]')
