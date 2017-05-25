@@ -127,14 +127,46 @@
         return result;
     };
 
+    let randomRange = function( min, max, integer = true ) {
+        [min, max] = ( min < max ) ? [min, max] : [max, min];
+
+        return integer ?
+            Math.floor( Math.random() * ( max - min + 1 ) + min ) :
+            Math.random() * ( max - min ) + min
+    };
+
+    // let range = function( start, end, step = 1 ) {
+    //     switch ( arguments.length ) {
+    //         case 1:
+    //             [start, end] = [0, arguments[0]];
+    //             step = ( end < start ) ? -1 : 1;
+    //             break;
+    //         case 2:
+    //             [start, end] = [arguments[0], arguments[1]];
+    //             step = ( end < start ) ? -1 : 1;
+    //             break;
+    //         case 3:
+    //             [start, end, step] = [arguments[0], arguments[1], arguments[2]];
+    //             if ( step >= 0 ) {
+    //                 [start, end] = ( end < start ) ? [end, start] : [start, end];
+    //                 step = step ? step : 1;
+    //             } else {
+    //                 [start, end] = ( end > start ) ? [end, start] : [start, end];
+    //             };
+    //             break;
+    //     };
+    //     var result = [];
+    // };
+
     app.tools = {
-        'quickSort': quickSort,
+        'bump': bump,
         'objectMerge': objectMerge,
+        'printObject': printObject
+        'quickSort': quickSort,
+        'randomRange': randomRange
         'stringToIntArray': stringToIntArray,
         'universalCounter': universalCounter,
         'weedOut': weedOut,
-        'bump': bump,
-        'printObject': printObject
     };
 
 })(App);
