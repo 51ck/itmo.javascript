@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>hw7</title>
+        <link rel="stylesheet" href="static/styles/main.css">
+        <script type="text/javascript">
+            var App = {};
+        </script>
+        <script type="text/javascript" src="static/scripts/plotly-latest.js"></script>
+    </head>
+    <body>
+        <pre><b>Задачи</b>
+<ol>
+<li>Подключить стороннюю библиотеку для построения графиков.
+Построить график функции y&nbsp;= f(x):
+y&nbsp;= 5/x, при x&gt;=1;
+y&nbsp;= x*x&nbsp;&mdash; 4*x, при x&lt;1.
+Шаг варьирования x&nbsp;равен 0.01 и&nbsp;интервал варьирования -5 &lt; x&nbsp;&lt; 5.
+Расчёт функции y&nbsp;= f(x) реализовать в&nbsp;виде отдельной функции.
+<div class="task1"><button>></button> <span></span></div>
+<div id="placeholder"></div></li>
+<li>Подключить стороннюю библиотеку для юнит тестирования.
+Написать несколько тестов для функции, рассчитывающей y = 1/x + sqrt(x).
+<div class="task2"><button disabled>></button> <span><a href="test/SpecRunner.html" target="_blanc">Гиперссылка на тест</a></span>
+</div></li>
+<li>Написать свою подключаемую js библиотеку для работы с массивом, хранящим целые числа.
+Библиотека должна обладать следующими методами:
+- поиск минимального элемента в переданном массиве;
+- поиск максимально элемента в переданном массиве;
+- расчет среднего арифметического значения элементов переданного массива;
+- создание копии (клонирование) переданного массива.
+<div class="task3"><input class="arr" type="text" placeholder="[ . . . ]"> <span></span>
+<button class="min">min</button><button class="max">max</button><button class="average">average</button><button class="clone">clone</button></div></li>
+<li>Написать кодер для шифра Цезаря (https://ru.wikipedia.org/wiki/Шифр_Цезаря).
+На вход принимается строка и сдвиг. На выход - зашифрованное/расшифрованное сообщение.
+<div class="task4"><input class="text" type="text"><input type="text" class="cypher"><button class="crypt">crypt</button><button class="decrypt">decrypt</button>
+<span></span></div></li>
+</ol>
+        </pre>
+
+        <script type="text/javascript" src="static/scripts/garbage.js"></script>
+        <script type="text/javascript" src="static/scripts/main.js"></script>
+
+    </body>
+</html>
