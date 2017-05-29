@@ -49,10 +49,10 @@
                     // Если символ из алфавита...
                     if ( index + step < 0 ) {
                         // ... клмпенсируем сдвиг ...
-                        var newIndex = index + step + alphabet.length - 1;
+                        var newIndex = index + step + alphabet.length;
                     } else if ( index + step + 1 > alphabet.length ){
                         // ... за пределы алфавита.
-                        var newIndex = index + step - alphabet.length + 1;
+                        var newIndex = index + step - alphabet.length;
                     } else {
                         var newIndex = index + step;
                     };
