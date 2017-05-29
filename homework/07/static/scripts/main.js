@@ -27,24 +27,52 @@
         // или правее него в алфавите. Например, в шифре со сдвигом вправо на 3, А была бы
         // заменена на Г, Б станет Д, и так далее.
 
+        let alphabet = 'abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюяABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789';
+        let lastStep;
+        let dictionary = {}; // словарь для текущего шага.
 
-        ////// Вопрос ....
+        let cryptChar = ( char, step = 0 ) => {
+            // Сдвиг символа на заданный шаг
 
+            let index = alphabet.indexOf( char );
+            if ( lastStep !== step ) {
+                // Обнуляем словарь, если шаг изменился и сохраняем текущий шаг.
+                dictionary = {};
+                lastStep = step;
+            };
 
-        // var dictionary = 'abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюяABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789';
+            if ( dictionary[char] ){
+                // Достаём символ из словаря, если он нам уже встречался
+                return dictionary[char];
+            } else {
+                if ( index !== -1 ) {
+                    // Если символ из алфавита...
+                    if ( index + step < 0 ) {
+                        // ... клмпенсируем сдвиг ...
+                        var newIndex = index + step + alphabet.length - 1;
+                    } else if ( index + step + 1 > alphabet.length ){
+                        // ... за пределы алфавита.
+                        var newIndex = index + step - alphabet.length + 1;
+                    } else {
+                        var newIndex = index + step;
+                    };
+                    dictionary[char] = alphabet[newIndex];
+                    // Кладём новую пару символов в словарь.
+                } else {
+                    dictionary[char] = char;
+                };
+            };
+            return dictionary[char];
+        };
 
-        // let cryptChar( char, step = 0 ) {
-        //     let index = dictionary.indexOf( cahr );
-        //     if ( index === -1 ) {}
-        // };
-
-        // return function( string, step = 0 ) {
-        //     let result = '';
-        //     for ( let i = 0, n = string.length; i < n; i++ ) {
-        //         let char = string[i];
-
-        //     };
-        // };
+        return function( string, step = 0 ) {
+            let result = '';
+            step = step % alphabet.length;
+            for ( let i = 0, n = string.length; i < n; i++ ) {
+                result += cryptChar( string[i], step );
+            };
+            return result;
+        };
     };
 
 
@@ -136,12 +164,39 @@
         // task3Button.addEventListener('click', function() {
         // });
 
-        var task4Crypt = document.querySelector('.task3 button.crypt');
-        var task4Decrypt = document.querySelector('.task3 button.decrypt');
-        var task4Text = document.querySelector('.task3 input.text');
-        var task4Cypher = document.querySelector('.task3 input.cypher');
+        var task4Crypt = document.querySelector('.task4 button.crypt');
+        var task4Decrypt = document.querySelector('.task4 button.decrypt');
+        var task4Text = document.querySelector('.task4 input.text');
+        var task4Cypher = document.querySelector('.task4 input.cypher');
+        var task4Output = document.querySelector('.task4 span');
+        var direction = true;
+        var crypt = task4();
 
+        task4Crypt.addEventListener('click', function() {
+            direction = true;
+            let step = parseInt(task4Cypher.value) || 0;
+            step *= direction ? 1 : -1;
+            task4Output.innerText = step ? crypt( task4Text.value, step ) : task4Text.value;
+        });
 
+        task4Decrypt.addEventListener('click', function() {
+            direction = false;
+            let step = parseInt(task4Cypher.value) || 0;
+            step *= direction ? 1 : -1;
+            task4Output.innerText = step ? crypt( task4Text.value, step ) : task4Text.value;
+        });
+
+        task4Text.addEventListener( 'keyup', function() {
+            let step = parseInt(task4Cypher.value) || 0;
+            step *= direction ? 1 : -1;
+            task4Output.innerText = step ? crypt( task4Text.value, step ) : task4Text.value;
+        } );
+
+        task4Cypher.addEventListener( 'keyup', function() {
+            let step = parseInt(task4Cypher.value) || 0;
+            step *= direction ? 1 : -1;
+            task4Output.innerText = step ? crypt( task4Text.value, step ) : task4Text.value;
+        } );
 
     });
 } )(App);
