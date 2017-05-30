@@ -1,0 +1,53 @@
+/*TRAFFIC LIGHT*/
+
+#traffic-light {
+    margin: 15px auto;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 162px;
+    height: 162px;
+    border: 4px solid #777777;
+    border-radius: 50%;
+    background: #222222;
+    font-size: 0;
+}
+
+.traffic-light--single-light {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 34px;
+    height: 34px;
+    border: 4px solid #333333;
+    border-radius: 50%;
+    background: black;
+    margin: 2px;
+    transition: background .3s ease-in-out;
+}
+
+.traffic-light--forward .traffic-light--single-light:nth-child(-n+6):nth-child(n+4):nth-child(2n) {
+    background: white;
+}
+
+.traffic-light--left .traffic-light--single-light:nth-child(7n+1) {
+    background: white;
+
+}
+
+.traffic-light--right .traffic-light--single-light:nth-child(5n+3) {
+    background: white;
+
+}
+
+.traffic-light--any .traffic-light--single-light:nth-child(-n+3),
+.traffic-light--any .traffic-light--single-light:nth-child(8) {
+    background: white;
+
+}
+
+.traffic-light--ready .traffic-light--single-light:nth-child(5) {
+    background: yellow;
+}
+
+.traffic-light--stop .traffic-light--single-light:nth-child(-n+6):nth-child(n+4):nth-child(2n) {
+    background: red;
+}
