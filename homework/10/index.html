@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>hw8</title>
+        <link rel="stylesheet" href="static/styles/main.css">
+        <script type="text/javascript">
+            var App = {};
+        </script>
+    </head>
+    <body>
+        <div class="side-container">
+            <div class="alpha"></div><div class="beta"></div>
+        </div>
+
+        <pre><b>Задачи</b>
+<ol>
+<li>Создать шаблон объектов «Товар».
+Свойства товара «Имя» и «Цена».
+Создать шаблон объектов «Корзина товаров».
+Приватные свойства объекта:
+- Массив товаров;
+- Количество товаров;
+- Сумма товаров.
+Методы объекта:
+- Добавить товар;
+- Вернуть сумму товара;
+- Вернуть количество товара.
+<div class="task1"><button disabled>></button> <span>Визуализация займёт у меня кучу времени, поэтому...
+&lt;key&gt;<strong>F12</strong>&lt;/key&gt;
+
+let a = new App.Good( 'apple', 5 );
+let b = new App.Good( 'pear', 7 );
+let c = new App.Good( 'peach', 8 );
+
+let crate = new App.Crate( a, a, b, c, a, b, c, a );
+crate.addGood( new App.Good( 'orange', 10 ) );
+console.log( crate.getTotal() );
+console.log( crate.getCount() );
+console.dir( crate );</span>
+</div></li>
+<li>Создать шаблон объектов «Человек».
+Свойства «Имя», «Возраст», «Пол», «Интересы».
+Метод преобразования к строке вида: «Человек:
+Иван. Возраст: 25 лет. Пол: м. Интересы:
+музыка, программирование.»
+Создать шаблон объектов «Студент».
+Свойства от наследованные от шаблона объектов
+«Человек» и добавить «Институт».
+Переопределить метод преобразования к строке
+вида: «Студент: Иван. Возраст: 25 лет. Пол: м.
+Интересы: музыка, программирование.
+Обучается в ИТМО.»
+<div class="task2"><button disabled>></button> <span>Для удобства вытянул свой генератор студента
+из шестой домашки. Так что идём в консоль...
+&lt;key&gt;<strong>F12</strong>&lt;/key&gt;
+
+let h = new App.Human( App.studentGenerator() );
+console.log( h.toString() );
+console.log( 'Встречаются довольно интересные экзнмпляры...' );
+
+let s = new App.Student( App.studentGenerator() );
+console.log( s.toString() );</span></div></li>
+<li>Создать шаблон объектов «Пользователь».
+Метод преобразования к строке выводит имя пользователя.
+Два фабричных метода:
+- «Создать анонимного пользователя» не получает аргументов,
+ в качества имя пользователя устанавливает «Аноним».
+- «Создать пользователя из данных» в качества аргументов
+получает объект с именем и возрастом пользователя.
+<div class="task3"><button disabled>></button></div></li>
+</ol>
+        </pre>
+
+        <script type="text/javascript" src="static/scripts/garbage.js"></script>
+        <script type="text/javascript" src="static/scripts/main.js"></script>
+
+    </body>
+</html>
