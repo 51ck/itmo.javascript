@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>hw8</title>
+        <link rel="stylesheet" href="static/styles/main.css">
+        <script type="text/javascript">
+            var App = {};
+        </script>
+        <style>
+            .alpha,
+            .beta {
+                position: relative;
+                display: inline-block;
+                width: 150px;
+                height: 150px;
+                border: 10px solid rgba(0,0,0,.3);
+                margin: 5px;
+            }
+
+            .alpha:hover,
+            .beta:hover {
+                cursor: pointer;
+            }
+
+            .alpha::before,
+            .beta::before {
+                content: "div";
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                vertical-align: middle;
+                text-align: center;
+                font-size: 45px;
+                line-height: 140px;
+                font-family: helvetica, sans-serif;
+                font-weight: 800;
+                color: rgba(0,0,0,.3);
+            }
+
+            .green {
+                background-color: #45da67;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="side-container">
+            <div class="alpha"></div><div class="beta"></div>
+        </div>
+
+        <pre><b>Задачи</b>
+<ol>
+<li>Даны несколько div элементов на html. По первому нажатию на
+каждый div он перекрашивается зеленым цветом, при повторном
+нажатии перекрашивается обратно и так далее каждый клик
+происходит чередование цвета.
+<div class="task1"><button>></button disabled> <span></span>
+</div></li>
+<li>Реализовать счётчик нажатий на кнопку: Дана кнопка внутри неё
+записана цифра. При клике на кнопку – её значение должно
+увеличиваться на единицу.
+<div class="task2"><button>></button><span></span></div></li>
+<li>Изобразить клавиатуру и расположенные на ней клавиши
+в виде html документа. При нажатии клавиши пользователем
+на клавиатуре, подсвечивать нажатую клавишу на клавиатуре
+изображенной в html и выводить нажатое значение.
+<div class="task3"><button>></button></div></li>
+</ol>
+        </pre>
+
+        <script type="text/javascript" src="static/scripts/garbage.js"></script>
+        <script type="text/javascript" src="static/scripts/main.js"></script>
+
+    </body>
+</html>
