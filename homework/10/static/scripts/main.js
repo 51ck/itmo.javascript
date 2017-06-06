@@ -39,11 +39,6 @@
 
 
     app.studentGenerator = function () {
-        // Построить объект студент:
-        // - свойства: Имя, Фамилия, Возраст, Интересы (в виде массива), Место обучения.
-        // - метод выводящий в консоль биографическую справку в виде, например:
-        // «Иван Петров. 21 год. Интересы: программирование, музыка, аниме. Учится в ИТМО.
-
         var firstNames = [
             'Иван',
             'Василий',
@@ -159,23 +154,52 @@
         this.male = human.male;
         this.interests = human.interests;
 
-        this.toString = function() {
+        this.toString = function () {
             return `${ this.name }. ${ this.male ? 'Мужчина' : 'Женщина' }, ${ years( this.age ) }. Интересы: ${ this.interests.join(', ')}.`;
         };
     };
 
-    let Student = function( human ) {
+    let Student = function ( human ) {
         Human.call( this, human );
         this.university = human.university;
 
-        this.toString = function() {
+        this.toString = function () {
             return `${ this.name }. ${ this.male ? 'Мужчина' : 'Женщина' }, ${ years( this.age ) }. Интересы: ${ this.interests.join(', ')}. Учится в ${ this.university }.`;
         };
     };
 
     app.Human = Human;
     app.Student = Student;
+
     //-----------------------------------------------------//
+
+    var User = function () {
+        this.name;
+        this.age;
+        this.toString = function () {
+            return this.name;
+        };
+    };
+
+    User.newUser = function ( user ) {
+        let u = new User();
+
+        u.name = user.name === 'Анон' ? '"Анон"' : user.name.toString();
+        u.age = parseInt( user.age ) || null;
+
+        return u;
+    };
+
+    User.anonimous = function () {
+        let u = new User();
+
+        u.name = 'Анон';
+        u.age = null;
+
+        return u;
+    };
+
+    app.User = User;
 
 
     //-----------------------------------------------------//

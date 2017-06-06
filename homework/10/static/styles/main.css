@@ -49,6 +49,17 @@ html {
     font-style: italic;
 }
 
+span.code {
+    font-family: monospace;
+    font-style: normal;
+    color: #516851;
+    display: block;
+    background: #eeeeee;
+    padding: 1em 2em;
+    border-left: .5em solid lightgray;
+    border-radius: 3px;
+}
+
 .table-wrapper {
     display: inline-block;
 }

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>hw8</title>
+        <title>hw10</title>
         <link rel="stylesheet" href="static/styles/main.css">
         <script type="text/javascript">
             var App = {};
@@ -27,18 +27,19 @@
 - Вернуть сумму товара;
 - Вернуть количество товара.
 <div class="task1"><button disabled>></button> <span>Визуализация займёт у меня кучу времени, поэтому...
+
 &lt;key&gt;<strong>F12</strong>&lt;/key&gt;
 
-let a = new App.Good( 'apple', 5 );
+<span class="code">let a = new App.Good( 'apple', 5 );
 let b = new App.Good( 'pear', 7 );
 let c = new App.Good( 'peach', 8 );
 
 let crate = new App.Crate( a, a, b, c, a, b, c, a );
+
 crate.addGood( new App.Good( 'orange', 10 ) );
 console.log( crate.getTotal() );
 console.log( crate.getCount() );
-console.dir( crate );</span>
-</div></li>
+console.dir( crate );</span></span></div></li>
 <li>Создать шаблон объектов «Человек».
 Свойства «Имя», «Возраст», «Пол», «Интересы».
 Метод преобразования к строке вида: «Человек:
@@ -53,14 +54,16 @@ console.dir( crate );</span>
 Обучается в ИТМО.»
 <div class="task2"><button disabled>></button> <span>Для удобства вытянул свой генератор студента
 из шестой домашки. Так что идём в консоль...
+
 &lt;key&gt;<strong>F12</strong>&lt;/key&gt;
 
-let h = new App.Human( App.studentGenerator() );
+<span class="code">let h = new App.Human( App.studentGenerator() );
 console.log( h.toString() );
-console.log( 'Встречаются довольно интересные экзнмпляры...' );
+console.log( 'Встречаются довольно интересные экземпляры...' );
 
 let s = new App.Student( App.studentGenerator() );
-console.log( s.toString() );</span></div></li>
+
+console.log( s.toString() );</span></span></div></li>
 <li>Создать шаблон объектов «Пользователь».
 Метод преобразования к строке выводит имя пользователя.
 Два фабричных метода:
@@ -68,7 +71,32 @@ console.log( s.toString() );</span></div></li>
  в качества имя пользователя устанавливает «Аноним».
 - «Создать пользователя из данных» в качества аргументов
 получает объект с именем и возрастом пользователя.
-<div class="task3"><button disabled>></button></div></li>
+<div class="task3"><button disabled>></button> <span>Продолжаем мучить консоль.
+
+&lt;key&gt;<strong>F12</strong>&lt;/key&gt;
+
+<span class="code">let users = [
+    { name: 'nagibator', age: 12 },
+    { name: 'Анон', age: 76 },
+    { name: 'Красный Смех', age: 27 },
+    { name: 'RedFox', age: 19 }
+];
+
+let user1 = App.User.newUser( users[0] );
+console.log( user1.toString() );
+
+let user2 = App.User.newUser( users[1] );
+console.log( user2.toString() );
+
+let user3 = App.User.newUser( users[2] );
+console.log( user3.toString() );
+
+let user4 = App.User.newUser( users[3] );
+console.log( user4.toString() );
+
+let user5 = App.User.anonimous( );
+console.log( user5.toString() );
+</span></span></div></li>
 </ol>
         </pre>
 
